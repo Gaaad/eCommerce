@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +5,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background-color: #f9f9f9;
+main {
+    background-color: #F5F5F5;
+    padding-left: 45;
+    padding-right: 45;
+    height: 90%;
 }
+
 
 a {
     text-decoration: none;
@@ -19,8 +22,6 @@ ul {
     list-style: none;
 }
 
-
-/* Navigation Bar */
 header {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
@@ -33,63 +34,160 @@ nav {
     padding: 10px 50px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.nav-links {
+/* categories style */
+.icon-grid {
     display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Space between boxes */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    padding: 20px;
 }
 
-.nav-links li {
-    margin: 0 10px;
-}
-
-.nav-links a {
-    color: #333;
-    font-weight: 500;
-}
-
-.nav-links img {
-    width: 20px;
-    height: 20px;
-}
-
-
-
-.search-box input {
-    padding: 7px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background-color: #F5F5F5;
-}
-
-.search-box {
+/* Individual box styling */
+.icon-box {
     display: flex;
-    align-items: center;
-}
-
-/* Main Section */
-.main-container {
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    margin: 50px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-/* Footer */
-footer {
-    background-color: #000;
+.icon-box:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling */
+.icon-box img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Text styling */
+.icon-box p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/*---------------------------*/
+.title-container {
+    display: flex;
+    /* Activate flexbox */
+    /* Adjust spacing */
+    align-items: center;
+    /* Vertically align elements */
+    gap: 20px;
+    /* Add spacing between elements */
+    padding-top: 20;
+}
+
+.title-container div {
+    height: 40;
+    width: 20;
+    background-color: #DB4444;
+    border-radius: 5px;
+}
+
+/*-------------------------*/
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.timer {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #DB4444;
     color: #fff;
-    padding: 30px 50px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-footer ul {
-    color: #ddd;
-    list-style: circle;
-    margin-left: 28px;
-    padding-top: 5px;
+.product-img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
 
+.product-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #333;
+}
+
+.product-price .old-price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.favorite-btn,
+.cart-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.favorite-btn {
+    background: #ff5a5f;
+}
+
+.cart-btn {
+    background: #0d6efd;
+}
+
+.cart-btn:hover,
+.favorite-btn:hover {
+    opacity: 0.8;
 }

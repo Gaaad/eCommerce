@@ -1,0 +1,196 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div class="logo">Exclusive</div>
+            <ul class="nav-links">
+                <li><a href="#">
+                        <h4 style="color: #DB4444;">Home</h4>
+                    </a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+            <div class="search-box">
+                <ul class="nav-links">
+                    <li><img src="./assets/images/general/heart.png" alt="" onclick=""></li>
+                    <li><img src="./assets/images/general/shopping-cart.png"></li>
+                    <li><img src="./assets/images/general/user.png" alt=""></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div class="title-container">
+            <div></div>
+            <h3 style="color: #DB4444;">All products </h3>
+        </div>
+        <br><br>
+        <div class="products">
+
+
+        </div>
+        <div id="icon-grid" class="icon-grid"> </div>
+
+    </main>
+
+    <script>
+        var cats = [
+
+            {
+                id: '1',
+                name: "mens clothes",
+                image_url: './assets/images/products/sony controller.png'
+            },
+            {
+                id: '2',
+                name: "wemens clothes",
+                image_url: './assets/images/products/sony controller.png'
+
+            },
+            {
+                id: '3',
+                name: "phones",
+                image_url: './assets/images/products/sony controller.png'
+
+            },
+            {
+                id: '4',
+                name: "computers",
+                image_url: './assets/images/products/sony controller.png'
+
+            },
+        ];
+
+        var products = [
+            {
+                id: 1,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+                img_url: './assets/images/products/sony controller.png'
+            }, {
+                id: 2,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+
+                img_url: './assets/images/products/sony controller.png'
+            }, {
+                id: 3,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+
+                img_url: './assets/images/products/sony controller.png'
+            }, {
+                id: 4,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+
+                img_url: './assets/images/products/sony controller.png'
+            }, {
+                id: 5,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+
+                img_url: './assets/images/products/sony controller.png'
+            }, {
+                id: 5,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+
+                img_url: './assets/images/products/sony controller.png'
+            }, {
+                id: 5,
+                name: 'ps3 controller',
+                catg: 'computers',
+                price: 120,
+                old_price: 150,
+                disscount: 40,
+
+                img_url: './assets/images/products/sony controller.png'
+            },
+        ];
+        getProducts(products);
+        getCategories(cats);
+
+
+        function getCategories(categories) {
+            for (const cat of categories) {
+
+                // Create a button element
+                const button = document.createElement('div');
+                button.className = 'icon-box';
+                button.id = 'cat' + cat.id;
+
+                // Create and add an image element
+                const img = document.createElement('img');
+                img.src = cat.image_url; // Replace with your image URL
+                img.alt = cat.name;
+                button.appendChild(img);
+
+                // Add text to the button
+                const text = document.createTextNode(cat.name);
+                button.appendChild(text);
+
+                // Append the button to a container or the body
+                document.getElementById('icon-grid').appendChild(button);
+            }
+
+        }
+
+        function getProducts(products) {
+            const productsContainer = document.querySelector('.products');
+
+            for (const product of products) {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+
+                productCard.innerHTML = `
+                    <div class="discount">- ${product.disscount}%</div>
+                    <img src="${product.img_url}" alt="${product.name}" class="product-img">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">
+                        $${product.price} <span class="old-price">$${product.old_price}</span>
+                    </div>
+                    <div class="buttons">
+                        <button class="favorite-btn">&#9829;</button>
+                        <button class="cart-btn">Add to Cart</button>
+                    </div>
+                `;
+
+                productsContainer.appendChild(productCard);
+            }
+        }
+    </script>
+</body>
+
+</html>
