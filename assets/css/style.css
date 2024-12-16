@@ -99,34 +99,50 @@ nav {
 }
 
 /*-------------------------*/
-.container {
-    width: 100%;
-    text-align: center;
-}
 
-h1 {
-    margin: 20px 0;
-}
-
-.timer {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
 
 .products {
     display: flex;
-    flex-wrap: wrap;
+    /* Align child items in a row */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
     gap: 20px;
+    /* Space between product cards */
+    padding: 20px;
+    /* Optional padding around the container */
+    scroll-behavior: smooth;
+    /* Optional: Smooth scrolling */
+    white-space: nowrap;
+    /* Prevent line wrapping */
 }
+
+.products::-webkit-scrollbar {
+    display: none;
+}
+
+.products::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Scrollbar thumb color */
+    border-radius: 4px;
+    /* Optional: Rounded scrollbar */
+}
+
+.products::-webkit-scrollbar-track {
+    background: transparent;
+    /* Scrollbar track background */
+}
+
+
 
 .product-card {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    width: 290px;
     padding: 10px;
     text-align: center;
     position: relative;
+    flex-shrink: 0;
 }
 
 .discount {
@@ -142,7 +158,7 @@ h1 {
 
 .product-img {
     width: 100%;
-    height: 150px;
+    max-height: 150px;
     object-fit: contain;
     margin-bottom: 10px;
 }
