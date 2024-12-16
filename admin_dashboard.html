@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <main>
+        <!-- Category Management Section -->
+        <section id="category-form-section">
+            <h2>Manage Categories</h2>
+            <form id="category-form">
+                <input type="hidden" id="category-id">
+                <label for="category-name">Name:</label>
+                <input type="text" id="category-name" required>
+                <button type="submit">Save Category</button>
+            </form>
+            <h3>Category List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="category-list"></tbody>
+            </table>
+        </section>
+
+        <!-- Product Management Section -->
+        <section id="product-form-section">
+            <h2>Manage Products</h2>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                <label for="product-name">Name:</label>
+                <input type="text" id="product-name" required>
+                <label for="product-image">Image URL:</label>
+                <input type="text" id="product-image" required>
+                <label for="product-category">Category:</label>
+                <select id="product-category" required>
+                    <option value="" disabled selected>Select a category</option>
+                </select>
+                <label for="product-price">Price:</label>
+                <input type="number" id="product-price" required>
+                <label for="product-description">Description:</label>
+                <textarea id="product-description" required></textarea>
+                <label for="product-stock">Stock Quantity:</label>
+                <input type="number" id="product-stock" required>
+                <button type="submit">Save Product</button>
+            </form>
+            <h3>Product List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="./assets/js/model/categoryModel.js"></script>
+    <script src="./assets/js/model/productModel.js"></script>
+    <script src="./assets/js/view/adminView.js"></script>
+    <script src="./assets/js/controller/categoryController.js"></script>
+    <script src="./assets/js/controller/productController.js"></script>
+</body>
+</html>
