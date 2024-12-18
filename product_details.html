@@ -1,42 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRoduct Page</title>
+    <title>Product Details Page</title>
     <link rel="stylesheet" href="./assets/css/Product_details.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+
 </head>
+
 <body>
-    <!-- Main Container -->
-    <main class="product-container">
-        <!-- Section: Product Image -->
-        <section class="product-image">
-            <img src="./assets/images/products/controller.JPG" alt="Havic HV G-92 Gamepad">
-        </section>
+    <div id="header"></div>
 
-        <!-- Aside: Product Details -->
-        <aside class="product-details">
-            <!-- Product Title and Rating -->
-            <h1 class="product-title">Havic HV G-92 Gamepad</h1>
+    <div id="product-container"></div>
 
-            <!-- Price -->
-            <p class="price">$192.00</p>
-
-            <!-- Product Description -->
-            <p class="description">
-                PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal. Pressure sensitive.
-            </p>
-
-            <!-- Quantity and Buy Button -->
-            <div class="quantity">
-                <button class="qty-btn-minus">-</button>
-                <span>1</span>
-                <button class="qty-btn-plus">+</button>
-                <button class="add-to-chart">Add To Cart</button>
-            </div>
-
-            
-        </aside>
-    </main>
+    <script src="./assets/shared_components/header.js"></script>
+    <script src="./assets/js/view/productDetailsView.js"></script>
+    <script src="./assets/js/controller/productDetailsController.js"></script>
+    <script src="./assets/js/model/productModel.js"></script>
 </body>
+
 </html>

@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="#">
                     <h4 style="color: #DB4444;">Home</h4>
                 </a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
             <li><a href="#">Sign Up</a></li>
         </ul>
         <div class="search-box">

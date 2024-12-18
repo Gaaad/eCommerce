@@ -5,20 +5,23 @@
     font-family: Arial, sans-serif;
 }
 
-/* Main Product Container */
+body {
+    background-color: #F5F5F5;
+}
+
 .product-container {
     display: flex;
     max-width: 1000px;
     margin: 50px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
 /* Section: Product Image */
 .product-image {
     flex: 1;
-    background-color: #f4f4f4;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,5 +95,3 @@
 .add-to-chart:hover {
     background-color: #d62839;
 }
-
-

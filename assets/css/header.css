@@ -1,4 +1,23 @@
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #FF5252;
+}
+
+ul {
+    list-style: none;
+}
 
 .logo {
     font-size: 24px;
@@ -44,19 +63,4 @@
     justify-content: center;
     gap: 50px;
     margin: 50px 0;
-}
-
-/* Footer */
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 30px 50px;
-}
-
-footer ul {
-    color: #ddd;
-    list-style: circle;
-    margin-left: 28px;
-    padding-top: 5px;
-
 }
