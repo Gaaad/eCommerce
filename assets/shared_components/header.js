@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
         <div class="search-box">
             <ul class="nav-links">
-                <li><img src="./assets/images/general/heart.png" alt="" onclick=""></li>
-                <li><img src="./assets/images/general/shopping-cart.png"></li>
+                <li><img src="./assets/images/general/heart.png" alt="" onclick="">
+                    <div class="counter">1</div>
+                </li>
+                <li><img src="./assets/images/general/shopping-cart.png">
+                    <div class="counter">1</div>
+                </li>
                 <li><img src="./assets/images/general/user.png" alt=""></li>
             </ul>
         </div>
