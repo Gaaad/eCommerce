@@ -16,5 +16,9 @@ const CategoryModel = {
     deleteCategory: function(categoryId) {
         const categories = this.getAllCategories().filter(category => category.id !== categoryId);
         localStorage.setItem("categories", JSON.stringify(categories));
+    },
+    getProductsByCategoryId: function(categoryId) {
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        return products.filter(product => product.categoryId === categoryId);
     }
 };

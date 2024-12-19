@@ -23,7 +23,7 @@ class HomeView {
             </div>
             <div class="buttons">
                 <button class="favorite-btn">&#9829;</button>
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="CartController.addItem('user1', '${product.id}')">Add to Cart</button>
             </div>
         `;
       productsContainer.appendChild(productCard);

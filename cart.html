@@ -15,32 +15,43 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody id="cart-table-body">
+                <!-- <tr>
                     <td class="product">
                         <img src="" alt="" class="product-image">
-                        <span class="product-name">LCD Monitor</span>
+                        <span class="product-name"></span>
                     </td>
-                    <td>$650</td>
+                    <td class="price"></td>
                     <td>
                         <input type="number" name="quantity" class="quantity" min="0">
                     </td>
-                    <td>$650</td>
-                </tr>
+                    <td class="subtotal"></td>
+                    <td>
+                        <button>Delete</button>
+                    </td>
+                </tr> -->
+                
                 
             </tbody>
         </table>
 
         <div class="cart-actions">
-            <button class="return-shop">Return To Shop</button>
+            <button class="return-shop" onclick="window.location.href='./home.html'">Return To Shop</button>
             <div class="cart-summary">
                 <h3>Cart Total</h3>
-                <p>Total: <span class="cart-total">$1750</span></p>
+                <p>Total: <span id="cart-total"></span></p>
                 <button class="checkout-btn">Proceed to checkout</button>
             </div>
         </div>
     </div>
+    <script src="./assets/js/model/productModel.js"></script>
+    <script src="./assets/js/model/cartModel.js"></script>
+    <script src="./assets/js/view/cartView.js"></script>
+    <script src="./assets/js/controller/cartController.js"></script>
+    
+    
 </body>
 </html>
