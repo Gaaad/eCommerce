@@ -1,6 +1,6 @@
 class HomeView {
-  static renderProducts(products) {
-    const productsContainer = document.querySelector(".products");
+  static renderProducts(products, className) {
+    const productsContainer = document.querySelector(className);
     for (const product of products) {
       const productCard = document.createElement("div");
       productCard.classList.add("product-card");
@@ -23,7 +23,9 @@ class HomeView {
             </div>
             <div class="buttons">
                 <button class="favorite-btn">&#9829;</button>
-                <button class="cart-btn" onclick="CartController.addItem('user1', '${product.id}')">Add to Cart</button>
+                <button class="cart-btn" onclick="CartController.addItem('user1', '${
+                  product.id
+                }')">Add to Cart</button>
             </div>
         `;
       productsContainer.appendChild(productCard);
@@ -40,6 +42,11 @@ class HomeView {
       img.src = cat.image_url;
       img.alt = cat.name;
       button.appendChild(img);
+
+      button.addEventListener("click", () => {
+        const categoryName = encodeURIComponent(cat.name);
+        window.location.href = `category_products.html?categoryName=${categoryName}`;
+      });
 
       const text = document.createTextNode(cat.name);
       button.appendChild(text);
