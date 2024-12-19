@@ -6,6 +6,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
 body {
     background-color: #F5F5F5;
 
@@ -105,7 +106,7 @@ main {
     scroll-behavior: smooth;
     overflow-x: auto;
     margin-top: 20px;
-    justify-content: space-evenly;
+    justify-content: center;
 
 }
 

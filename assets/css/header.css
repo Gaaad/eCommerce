@@ -66,3 +66,18 @@ ul {
     gap: 50px;
     margin: 50px 0;
 }
+
+.counter {
+    position: relative;
+    top: -27px;
+    right: -10px;
+    background-color: #DB4444;
+    color: white;
+    font-size: 9px;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
