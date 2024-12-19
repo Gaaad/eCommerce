@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="search-box">
             <ul class="nav-links">
                 <li><img src="./assets/images/general/heart.png" alt="" onclick=""></li>
-                <li><img src="./assets/images/general/shopping-cart.png"></li>
+                <li><img src="./assets/images/general/shopping-cart.png" onclick="window.location.href='./cart.html'"></li>
                 <li><img src="./assets/images/general/user.png" alt=""></li>
             </ul>
         </div>
