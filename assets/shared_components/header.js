@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateFavCounter();
 
-  // Add event listener for favorite buttons
   document.body.addEventListener("click", (event) => {
     if (event.target && event.target.classList.contains("favorite-btn")) {
       updateFavCounter();

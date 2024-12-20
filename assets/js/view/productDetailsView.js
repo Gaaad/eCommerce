@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAddToCart = document.querySelector(".add-to-chart");
 
   btnAddToCart.addEventListener("click", () => {
-    console.log(qtyValue.textContent);
     CartController.updateItemQuantity("user1", productId, qtyValue.textContent);
   });
 
