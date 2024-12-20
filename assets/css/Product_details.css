@@ -95,3 +95,13 @@ body {
 .add-to-chart:hover {
     background-color: #d62839;
 }
+
+form label {
+    font-weight: bold;
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+}

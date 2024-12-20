@@ -57,5 +57,34 @@ const AdminView = {
         document.getElementById("product-price").value = product.price;
         document.getElementById("product-description").value = product.description;
         document.getElementById("product-stock").value = product.stock;
+    },
+
+    renderOrderList: function (orders) {
+        const orderList = document.getElementById("order-list");
+        orderList.innerHTML = orders.map(order => `
+            <tr>
+                <td>${order.id}</td>
+                <td>${order.customerId}</td>
+                <td>${order.customerName}</td>
+                <td>${order.products.map(p => `<span>${p.name} (${p.quantity})</span>`).join(", ")}</td>
+                <td>${order.total.toFixed(2)}</td>
+                <td>${order.status}</td>
+                <td>${order.date}</td>
+                <td>
+                    <select onchange="OrderController.updateOrderStatus('${order.id}', this.value)">
+                        <option value="Pending" ${order.status === "Pending" ? "selected" : ""}>Pending</option>
+                        <option value="Shipped" ${order.status === "Shipped" ? "selected" : ""}>Shipped</option>
+                        <option value="Delivered" ${order.status === "Delivered" ? "selected" : ""}>Delivered</option>
+                    </select>
+                    <button onclick="OrderController.deleteOrder('${order.id}')">Delete</button>
+                </td>
+            </tr>
+        `).join('');
     }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    AdminView.renderCategoryList(CategoryModel.getAllCategories());
+    AdminView.renderOrderList(OrderModel.getAllOrders());
+    AdminView.renderProductList(ProductModel.getAllProducts());
+});

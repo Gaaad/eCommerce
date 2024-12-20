@@ -29,8 +29,11 @@ class CartModel {
         const item = cart.find(item => item.productId === productId);
         if (item) {
             item.quantity = quantity;
-            this.saveCart(userId, cart);
         }
+        else{
+            cart.push({ productId, quantity: 1 });
+        }
+        this.saveCart(userId, cart);
     }
 
     static getCartWithDetails(userId) {
@@ -47,5 +50,9 @@ class CartModel {
                 image: product.image, 
             };
         });
+    }
+
+    static clearCart(userId) {
+        this.saveCart(userId, []);
     }
 }
