@@ -5,5 +5,3 @@ class ProductDetailsController {
     ProductsDetailsView.renderProductDetails(product);
   }
 }
-
-

@@ -11,6 +11,8 @@ class CategoryProductsController {
 
     if (categoryName == "All Products")
       products = ProductModel.getAllProducts();
+    else if (categoryName == "Favourite Products")
+      products = WishlistModel.loadWhislistProducts("user1");
     else products = ProductModel.getProductsByCategory(categoryName);
 
     HomeView.renderProducts(products, ".category-products");

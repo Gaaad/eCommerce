@@ -1,5 +1,7 @@
 class ProductsDetailsView {
   static renderProductDetails(product) {
+    console.log(product);
+
     var productContainer = document.getElementById("product-container");
 
     productContainer.innerHTML = `
@@ -33,25 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("productId");
   ProductDetailsController.getProductById(productId);
-  const qtyMinus = document.querySelector('.qty-btn-minus');
-  const qtyPlus = document.querySelector('.qty-btn-plus');
-  const qtyValue = document.querySelector('.qty-value');
-  const btnAddToCart=document.querySelector('.add-to-chart');
+  const qtyMinus = document.querySelector(".qty-btn-minus");
+  const qtyPlus = document.querySelector(".qty-btn-plus");
+  const qtyValue = document.querySelector(".qty-value");
+  const btnAddToCart = document.querySelector(".add-to-chart");
 
-  btnAddToCart.addEventListener('click',()=>{
+  btnAddToCart.addEventListener("click", () => {
     console.log(qtyValue.textContent);
-    CartController.updateItemQuantity('user1', productId, qtyValue.textContent);
-  })
-    
-    qtyMinus.addEventListener('click', () => {
-        let currentQty = parseInt(qtyValue.textContent);
-        if (currentQty > 1) { 
-            qtyValue.textContent = currentQty - 1;
-        }
-    });
+    CartController.updateItemQuantity("user1", productId, qtyValue.textContent);
+  });
 
-    qtyPlus.addEventListener('click', () => {
-        let currentQty = parseInt(qtyValue.textContent);
-        qtyValue.textContent = currentQty + 1;
-    });
+  qtyMinus.addEventListener("click", () => {
+    let currentQty = parseInt(qtyValue.textContent);
+    if (currentQty > 1) {
+      qtyValue.textContent = currentQty - 1;
+    }
+  });
+
+  qtyPlus.addEventListener("click", () => {
+    let currentQty = parseInt(qtyValue.textContent);
+    qtyValue.textContent = currentQty + 1;
+  });
 });

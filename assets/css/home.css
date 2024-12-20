@@ -17,11 +17,6 @@ main {
     padding-right: 45;
 }
 
-
-
-
-
-
 .icon-grid {
     display: flex;
     justify-content: center;
@@ -106,7 +101,7 @@ main {
     scroll-behavior: smooth;
     overflow-x: auto;
     margin-top: 20px;
-    justify-content: center;
+    justify-content: start;
 
 }
 

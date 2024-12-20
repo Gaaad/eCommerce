@@ -22,7 +22,9 @@ class HomeView {
       }</span>
             </div>
             <div class="buttons">
-                <button class="favorite-btn">&#9829;</button>
+                <button id="favorite-btn" class="favorite-btn" onclick="WishlistController.addItem('user1','${
+                  product.id
+                }')">&#9829;</button>
                 <button class="cart-btn" onclick="CartController.addItem('user1', '${
                   product.id
                 }')">Add to Cart</button>
@@ -54,4 +56,5 @@ class HomeView {
       document.getElementById("icon-grid").appendChild(button);
     }
   }
+
 }
