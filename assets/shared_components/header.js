@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const headerHTML = `
+  const headerHTML = `
        <header>
     <nav>
         <div class="logo">Exclusive</div>
@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
         <div class="search-box">
             <ul class="nav-links">
-                <li><img src="./assets/images/general/heart.png" alt="" onclick="">
+                <li><img src="./assets/images/general/heart.png" onclick="window.location.href='category_products.html?categoryName=Favourite Products'">
                     <div class="counter">1</div>
                 </li>
-                <li><img src="./assets/images/general/shopping-cart.png">
+                <li><img src="./assets/images/general/shopping-cart.png" onclick="window.location.href='./cart.html'">
                     <div class="counter">1</div>
                 </li>
                 <li><img src="./assets/images/general/user.png" alt=""></li>
@@ -23,5 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
     </nav>
 </header>
     `;
-    document.getElementById("header").innerHTML = headerHTML;
+  document.getElementById("header").innerHTML = headerHTML;
 });
