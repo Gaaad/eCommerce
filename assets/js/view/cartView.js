@@ -13,7 +13,7 @@ class CartView  {
                     </td>
                     <td class="price">${product.price}</td>
                     <td>
-                        <input type="number" value="${product.quantity}" name="quantity" class="quantity" min="1" onchange="CartController.updateItemQuantityAndLoadCart('user1', '${product.productId}', this.value)">
+                        <input type="number" value="${product.quantity}" name="quantity" class="quantity" min="1"  onchange="CartController.updateItemQuantityAndLoadCart('user1', '${product.productId}', this.value)">
                     </td>
                     <td class="subtotal">${product.total}</td>
                     <td>

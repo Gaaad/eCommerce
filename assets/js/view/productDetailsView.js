@@ -1,6 +1,5 @@
 class ProductsDetailsView {
   static renderProductDetails(product) {
-    console.log(product);
 
     var productContainer = document.getElementById("product-container");
 
@@ -20,7 +19,8 @@ class ProductsDetailsView {
             
             <div class="quantity">
                 <button class="qty-btn-minus">-</button>
-                <span class="qty-value">1</span>
+                
+                <input type="number" class="qty-value" max="${product.stock}" min="1" readonly value="1">
                 <button class="qty-btn-plus" >+</button>
                 <button class="add-to-chart" >Add To Cart</button>
             </div>
@@ -32,6 +32,7 @@ class ProductsDetailsView {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
+  
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("productId");
   ProductDetailsController.getProductById(productId);
@@ -41,18 +42,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAddToCart = document.querySelector(".add-to-chart");
 
   btnAddToCart.addEventListener("click", () => {
-    CartController.updateItemQuantity("user1", productId, qtyValue.textContent);
+    debugger;
+    console.log(qtyValue.value);
+    CartController.updateItemQuantity("user1", productId, qtyValue.value);
   });
 
   qtyMinus.addEventListener("click", () => {
-    let currentQty = parseInt(qtyValue.textContent);
+    let currentQty = parseInt(qtyValue.value);
     if (currentQty > 1) {
-      qtyValue.textContent = currentQty - 1;
+      qtyValue.value = currentQty - 1;
     }
   });
 
   qtyPlus.addEventListener("click", () => {
-    let currentQty = parseInt(qtyValue.textContent);
-    qtyValue.textContent = currentQty + 1;
+    let currentQty = parseInt(qtyValue.value);
+    const maxStock = parseInt(qtyValue.getAttribute('max'), 10);
+    if (currentQty < maxStock) {
+      qtyValue.value = currentQty + 1;
+    }
   });
 });
