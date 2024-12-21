@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identification</title>
+    <link rel="stylesheet" href="./assets/css/identification.css">
+</head>
+<body>
+    <section class="main">
+        <div class="buttons">
+            <button class="btn" onclick="openRegister()">Register</button>
+            <button class="btn" onclick="openLogin()">LogIn</button>
+        </div>
+        <div id="register-div">
+            <h2>Register as a new user</h2>
+            <form action="" id="registeration-form">
+                <div class="form-row">
+                    <div class="inputstack">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="fullname" class="input">
+                        <p class="hidden" id="name-invalid">Name Must be two words at least</p>
+                    </div>
+                    <div class="inputstack">
+                        <label for="mobile">Phone</label>
+                        <input type="tel" id="phone" name="mobile" class="input">
+                        <p class="hidden" id="phone-invalid">Enter a valid Egyptioan Phone Number</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inputstack">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="input">
+                        <p class="hidden" id="email-invalid">Enter a valid Gmail account</p>
+                    </div>
+                    <div class="inputstack">
+                        <label for="role">Role</label>
+                        <select name="role" id="role">
+                            <option value="admin">Admin</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="inputstack">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="input">
+                        <div>
+                            <p class="hidden" id="passlength">Password length from 8 to 15 charachter</p>
+                            <p class="hidden" id="passdigits">Password should contains digits</p>
+                        </div>
+                    </div>
+                    <div class="inputstack">
+                        <label for="repeatpass">Repeat Password</label>
+                        <input type="password" id="repeat-pass" name="repeatpass" class="input">
+                        <p class="hidden" id="passmatch">Password and repeat password should be identical</p>
+                    </div>
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="hidden" id="LogInDiv">
+            <h2>Login to your existing account</h2>
+            <p class="hidden">Invalid username or password. Please try again</p>
+            <form  id="log-in">
+                <div class="inputstacklogin">
+                    <label for="username">Username</label>
+                    <input type="email" id="emaillogged" name="username" class="input">
+                </div>
+                <div class="inputstacklogin">
+                    <label for="passlog">Password</label>
+                    <input type="password" id="passlog" name="passlog" class="input">
+                </div>
+                <!-- <input type="submit"> -->
+                 <button class="btn" style="width: 100%;" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="./assets/js/controller/validationController.js"></script>
+</body>
+</html>
