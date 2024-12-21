@@ -12,7 +12,7 @@ class CartModel {
         const cart = this.loadCart(userId);
         const exist = cart.find(item => item.productId === productId);
         if (exist) {
-            exist.quantity += 1;
+            exist.quantity = 1;
         } else {
             cart.push({ productId, quantity: 1 });
         }
@@ -31,7 +31,7 @@ class CartModel {
             item.quantity = quantity;
         }
         else{
-            cart.push({ productId, quantity: 1 });
+            cart.push({ productId, quantity:quantity });
         }
         this.saveCart(userId, cart);
     }
