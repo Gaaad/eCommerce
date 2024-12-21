@@ -1,12 +1,12 @@
-class CartView  {
-    static rendercart(cartProducts) {
-        const cartTotal=document.getElementById("cart-total");
-        const cartBody=document.getElementById("cart-table-body");
-        let total=0;
-        cartBody.innerHTML="";
-        cartProducts.forEach(product => {
-            total+=(product.total);
-            cartBody.innerHTML+=`<tr>
+class CartView {
+  static rendercart(cartProducts) {
+    const cartTotal = document.getElementById("cart-total");
+    const cartBody = document.getElementById("cart-table-body");
+    let total = 0;
+    cartBody.innerHTML = "";
+    cartProducts.forEach((product) => {
+      total += product.total;
+      cartBody.innerHTML += `<tr>
                     <td class="product">
                         <img src="${product.image}" alt="" class="product-image">
                         <span class="product-name">${product.name}</span>
@@ -19,11 +19,11 @@ class CartView  {
                     <td>
                         <button onclick="CartController.removeItem('user1', '${product.productId}')">Delete</button>
                     </td>
-                </tr>`
-        });
-        cartTotal.textContent=`$${total}`;
-    }
+                </tr>`;
+    });
+    cartTotal.textContent = `$${total}`;
+  }
 }
 document.addEventListener("DOMContentLoaded", () => {
-    CartController.loadCart('user1');
+  CartController.loadCart("user1");
 });

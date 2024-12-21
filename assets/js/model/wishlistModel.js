@@ -4,7 +4,7 @@ class WishlistModel {
     const products = ProductModel.getAllProducts();
 
     const filteredProducts = products.filter((product) =>
-      whishlistData.some((item) => item.productId === product.id)
+      whishlistData.some((item) => item.productId == `${product.id}`)
     );
 
     return filteredProducts;
@@ -27,14 +27,12 @@ class WishlistModel {
 
     if (exist) {
       this.removeItem(userId, productId);
-      alert("Product removed successfully");
+      alert("Product removed successfully from your whishlist");
     } else {
       whislist.push({ productId });
       this.saveWishlist(userId, whislist);
-      alert("Product added successfully");
+      alert("Product added successfully to your whishlist");
     }
-
-    // Save updated wishlist
   }
 
   static removeItem(userId, productId) {

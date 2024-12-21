@@ -17,9 +17,9 @@ class HomeView {
             >
             <div class="product-name">${product.name}</div>
             <div class="product-price">
-                $${
-                  product.price * (1 - product.discount / 100)
-                } <span class="old-price">$${product.price}</span>
+                $${(product.price * (1 - product.discount / 100)).toFixed(
+                  1
+                )} <span class="old-price">$${product.price}</span>
             </div>
             <div class="buttons">
                 <button id="favorite-btn" class="favorite-btn" onclick="WishlistController.addItem('user1','${
