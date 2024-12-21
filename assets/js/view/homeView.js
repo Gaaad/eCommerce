@@ -6,7 +6,7 @@ class HomeView {
       productCard.classList.add("product-card");
 
       productCard.innerHTML = `
-            <div class="discount">- ${product.price}%</div>
+            <div class="discount">- ${product.discount}%</div>
             <img 
                 src="${product.image}" 
                 alt="${product.name}" 
@@ -17,9 +17,9 @@ class HomeView {
             >
             <div class="product-name">${product.name}</div>
             <div class="product-price">
-                $${product.price} <span class="old-price">$${
-        product.price
-      }</span>
+                $${
+                  product.price * (1 - product.discount / 100)
+                } <span class="old-price">$${product.price}</span>
             </div>
             <div class="buttons">
                 <button id="favorite-btn" class="favorite-btn" onclick="WishlistController.addItem('user1','${
@@ -41,7 +41,7 @@ class HomeView {
       button.id = "cat" + cat.id;
 
       const img = document.createElement("img");
-      img.src = cat.image_url;
+      img.src = cat.picture;
       img.alt = cat.name;
       button.appendChild(img);
 
@@ -56,5 +56,4 @@ class HomeView {
       document.getElementById("icon-grid").appendChild(button);
     }
   }
-
 }
